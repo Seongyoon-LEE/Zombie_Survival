@@ -57,26 +57,36 @@ public class Gun : MonoBehaviour
     }
     void Shot() // 실제 발사 처리 
     {
-        RaycastHit hit; // 레이캐스트 히트 정보
-        Vector3 hitPos = Vector3.zero; // 맞은 위치 초기화
-        if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireDistance)) // 레이캐스트 발사
-        {   // 느슨한 카풀링 <중요>
-            IDamageable target = hit.collider.GetComponent<IDamageable>(); // 충돌한 오브젝트에서 IDamageable 인터페이스를 찾음
+        RaycastHit hit;
+        Vector3 hitPos = Vector3.zero;
+
+        if (Physics.Raycast(firePos.position, firePos.forward, out hit, fireDistance))
+        {
+            IDamageable target = hit.collider.GetComponent<IDamageable>();
             if (target != null)
             {
-                target.OnDamage(gunData.damage, hit.point, hit.normal); // 충돌한 오브젝트가 IDamageable을 구현하고 있다면 데미지 처리 
+                target.OnDamage(gunData.damage, hit.point, hit.normal);
             }
-            hitPos = hit.point; // 맞은 위치 설정
+            hitPos = hit.point;
         }
         else
-        {   // 위치 + 방향 * 거리 
-            hitPos = firePos.position + firePos.forward * fireDistance; // 맞은 위치가 없으면 사정거리 끝으로 설정
+        {
+            hitPos = firePos.position + firePos.forward * fireDistance;
         }
-        StartCoroutine(ShotEffect(hitPos)); // 발사 이펙트 코루틴 시작
-        magAmmo--; // 탄창의 총알 수 감소
+
+        StartCoroutine(ShotEffect(hitPos));
+        magAmmo--;
+
         if (magAmmo <= 0)
         {
-            state = eState.EMPTY; 
+            if (ammoRemain > 0)
+            {
+                StartCoroutine(ReloadRoutine()); // 자동 재장전
+            }
+            else
+            {
+                state = eState.EMPTY; // 총알도 없으면 EMPTY
+            }
         }
     }
             IEnumerator ShotEffect(Vector3 hitPosition) // 발사 이펙트 코루틴
