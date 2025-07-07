@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 moveDistance = 
         playerInput.move * transform.forward * moveSpeed * Time.fixedDeltaTime;
         rb.MovePosition(rb.position + moveDistance);    
+        animator.SetFloat("Move", playerInput.move); // 애니메이션 속도 설정
     }
     private void Rotate()
         {
