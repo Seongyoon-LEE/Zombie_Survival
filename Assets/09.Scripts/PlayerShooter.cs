@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerShooter : MonoBehaviour
 {
-    [SerializeField] Gun gun; // 총 스크립트 참조
+    public Gun gun; // 총 스크립트 참조
     [SerializeField] Transform gunPivot; // 총의 회전 중심이 되는 피벗
     [SerializeField] Transform leftHandleMount; // 왼손이 잡는 위치
     [SerializeField] Transform rightHandleMount; // 오른손이 잡는 위치
