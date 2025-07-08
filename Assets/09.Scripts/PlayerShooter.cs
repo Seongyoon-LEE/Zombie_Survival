@@ -41,9 +41,13 @@ public class PlayerShooter : MonoBehaviour
         }
         UpdateUI(); // UI 업데이트 호출
     }
-    void UpdateUI()
+    void UpdateUI() // 탄약 UI 갱신
     {
-        // 탄약 UI 업데이트 
+        if (gun != null && UIManager.instance != null)
+        {
+            // UIManager의 탄약 텍스트에 탄창의 탄약과 남은 전체 탄약을 표시
+            UIManager.instance.UpdateAmmoText(gun.magAmmo, gun.ammoRemain);
+        }
 
     }
     private void OnAnimatorIK(int layerIndex)

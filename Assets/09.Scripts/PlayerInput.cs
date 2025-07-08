@@ -18,7 +18,7 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        if(GameManager.Instance != null && GameManager.Instance.isGameOver)
+        if(GameManager.instance != null && GameManager.instance.isGameOver)
         {
             move = 0f; rotate = 0f; fire = false; reload = false;
             return; // 게임 오버 상태면 입력 감지 중지

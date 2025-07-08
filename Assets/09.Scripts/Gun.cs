@@ -23,8 +23,8 @@ public class Gun : MonoBehaviour
     AudioSource source;
     float fireDistance = 100f; // 총알이 날아가는 거리(사정거리)
 
-    [SerializeField] int ammoRemain; // 현재 남아있는 총알 수
-    [SerializeField] int magAmmo; // 현재 탄창에 있는 총알 수
+    public int ammoRemain; // 현재 남아있는 총알 수
+    public int magAmmo; // 현재 탄창에 있는 총알 수
     float lastFireTime; // 마지막 발사 시간
     Vector3 hitPosition; // 총알이 맞은 위치
     WaitForSeconds wsShotEffect; // 발사 이펙트 대기 시간

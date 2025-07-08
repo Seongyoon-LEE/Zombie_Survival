@@ -101,7 +101,7 @@ public class Zombie : LivingEntity
     }
     public override void Die()
     {
-        base.Die();
+     
         // 다른 AI를 방해하지 않도록 자신의 모든 콜라이더를 비활성화
         Collider[] zombiecolliders = GetComponents<Collider>(); // 좀비의 모든 콜라이더 가져오기
         for (int i = 0; i < zombiecolliders.Length; i++)
@@ -112,6 +112,7 @@ public class Zombie : LivingEntity
         agent.enabled = false; // 네비게이션 에이전트 비활성화
         animator.SetTrigger(hashDie); // 죽음 애니메이션 트리거 설정'
         source.PlayOneShot(deathClip); // 죽음 사운드 재생
+        base.Die();
     }
     public void OnTriggerStay(Collider other) // 트리거 안에 있을때 특정 기능을 유지할때
     {
