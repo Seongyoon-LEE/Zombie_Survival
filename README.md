@@ -38,6 +38,6 @@ https://youtu.be/v06FlqHdTTY
   <tr>
     <td><img src="https://github.com/user-attachments/assets/7a6b6d4e-5455-4116-875b-8d66cc478306" width="100%"/></td>
     <td><img src="https://github.com/user-attachments/assets/f8a7d043-90bc-4d59-9c0a-319695dbc553" width="100%"/></td>
-    <td><img src="https://github.com/user-attachments/assets/b8d0752f-e440-4fe1-a99e-806ce2e2f38c" width="100%"/></td>
+    <td><img width="1174" height="654" alt="Image" src="https://github.com/user-attachments/assets/4acb804c-6bec-4c29-9494-bd854bc332f9" />
   </tr>
 </table>
