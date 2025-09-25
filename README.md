@@ -36,7 +36,7 @@ https://youtu.be/v06FlqHdTTY
     <td align="center"><b>게임오버 화면</b></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/7a6b6d4e-5455-4116-875b-8d66cc478306" width="100%"/></td>
+    <td><img width="2563" height="1603" alt="Image" src="https://github.com/user-attachments/assets/52792b1c-d046-4d99-ad05-c7a076e98e53" /></td>
     <td><img src="https://github.com/user-attachments/assets/f8a7d043-90bc-4d59-9c0a-319695dbc553" width="100%"/></td>
     <td><img src="https://github.com/user-attachments/assets/b8d0752f-e440-4fe1-a99e-806ce2e2f38c" width="100%"/></td>
   </tr>
